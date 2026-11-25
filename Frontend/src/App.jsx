@@ -3,8 +3,8 @@ import { RequireRole, StaffLayout, StudentLayout, ParentLayout } from './compone
 import { Empty } from './components/Common';
 import { useAuth } from './context/AuthContext';
 
-import Landing from './pages/public/Landing';
-import Login, { AdminLogin } from './pages/public/Login';
+import Landing from './pages/Public/Landing';
+import Login, { AdminLogin } from './pages/Public/Login';
 import StudentHome from './pages/student/StudentHome';
 import ParentHome from './pages/parent/ParentHome';
 import DailyReport from './pages/parent/DailyReport';
