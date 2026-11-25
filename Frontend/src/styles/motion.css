@@ -1,0 +1,87 @@
+/* ===== Motion: saare animations yahin hain. Band karna ho to is file ka import main.jsx se hata dein. ===== */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+@keyframes wordIn { from { opacity: 0; transform: translateY(.55em) rotate(2deg); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes floatY { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-16px) rotate(5deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes riseStep { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes barUp { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes growX { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes drawLine { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(24px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes blobMove { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, -30px) scale(1.12); } }
+
+/* Page badalte hi naya page halke se upar aata hai */
+.page-in { animation: fadeUp .38s cubic-bezier(.2, .8, .2, 1) backwards; }
+
+/* Cards / stats ek ke baad ek aate hain */
+.grid > *, .stack > * { animation: fadeUp .5s cubic-bezier(.2, .8, .2, 1) backwards; }
+.grid > :nth-child(1), .stack > :nth-child(1) { animation-delay: 0ms; }
+.grid > :nth-child(2), .stack > :nth-child(2) { animation-delay: 55ms; }
+.grid > :nth-child(3), .stack > :nth-child(3) { animation-delay: 110ms; }
+.grid > :nth-child(4), .stack > :nth-child(4) { animation-delay: 165ms; }
+.grid > :nth-child(5), .stack > :nth-child(5) { animation-delay: 220ms; }
+.grid > :nth-child(6), .stack > :nth-child(6) { animation-delay: 275ms; }
+.grid > :nth-child(7), .stack > :nth-child(7) { animation-delay: 330ms; }
+.grid > :nth-child(8), .stack > :nth-child(8) { animation-delay: 385ms; }
+.grid > :nth-child(9), .stack > :nth-child(9) { animation-delay: 440ms; }
+.grid > :nth-child(10), .stack > :nth-child(10) { animation-delay: 495ms; }
+.grid > :nth-child(11), .stack > :nth-child(11) { animation-delay: 550ms; }
+.grid > :nth-child(12), .stack > :nth-child(12) { animation-delay: 605ms; }
+
+.stat, .quick-card, .subject, .book, .chapter, .action-link, .card.exam { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.stat:hover, .quick-card:hover, .subject:hover, .book:hover, .chapter:hover, .action-link:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(20, 40, 45, .12); }
+.subject .icon { transition: transform .2s; } .subject:hover .icon { transform: translateX(4px); }
+
+/* Buttons */
+.btn { transition: background .15s, border-color .15s, transform .12s, box-shadow .15s; }
+.btn:hover:not(:disabled) { box-shadow: 0 4px 12px rgba(0, 0, 0, .14); }
+.btn:active:not(:disabled) { transform: scale(.97); }
+.option { transition: border-color .15s, background .15s, transform .12s; } .option:active:not(:disabled) { transform: scale(.985); }
+.option.right { animation: popIn .3s; }
+.chip, .pill, .toplink, .sidelink { transition: background .15s, color .15s, transform .15s; } .pill:hover { transform: translateY(-2px); }
+
+/* Class ki seedhiyan neeche se upar banti hain */
+.steps:not(.steps-static) .step { transform-origin: bottom; animation: riseStep .6s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(var(--n) * 70ms); }
+.steps-static .step { transform: scaleY(0); transform-origin: bottom; transition: transform .7s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--n) * 80ms); cursor: default; }
+.steps-static.in .step { transform: none; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); transition-delay: var(--rd, 0ms); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Home page: tairte icons aur halke rang ke gole */
+.floaters { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.floater { position: absolute; color: rgba(255, 255, 255, .17); animation: floatY var(--dur, 8s) ease-in-out infinite; animation-delay: var(--dl, 0s); }
+.blob { position: absolute; border-radius: 50%; filter: blur(50px); opacity: .5; animation: blobMove 14s ease-in-out infinite; }
+.blob.b1 { width: 340px; height: 340px; left: -80px; bottom: -90px; background: #2E8B57; }
+.blob.b2 { width: 300px; height: 300px; right: 5%; top: -90px; background: #E0A93B; opacity: .28; animation-delay: -6s; }
+
+/* Student hero ka rang dheere-dheere khisakta hai */
+.s-hero { background-size: 200% 200%; animation: shift 16s ease infinite; }
+.s-hero > div > * { animation: fadeUp .6s cubic-bezier(.2, .8, .2, 1) backwards; }
+.s-hero > div > :nth-child(2) { animation-delay: .08s; } .s-hero > div > :nth-child(3) { animation-delay: .16s; }
+
+/* Charts */
+.chart .bar { transform-box: fill-box; transform-origin: bottom; animation: barUp .6s cubic-bezier(.2, .8, .2, 1) backwards; }
+.chart .draw { stroke-dasharray: 1; animation: drawLine 1.1s ease-out backwards; }
+.chart .area { animation: fadeIn 1.1s ease backwards; }
+.hb-fill { transform-origin: left; animation: growX .8s cubic-bezier(.2, .8, .2, 1) backwards; }
+
+/* Popup, toast */
+.modal-back { animation: fadeIn .2s ease; }
+.modal { animation: slideUp .25s cubic-bezier(.2, .8, .2, 1); }
+.toast { animation: slideUp .3s cubic-bezier(.2, .8, .2, 1); }
+.more-menu { animation: fadeUp .18s ease-out; }
+.live-banner { animation: fadeUp .5s backwards, pulseBg 2.4s ease-in-out infinite; }
+@keyframes pulseBg { 50% { background: #F7D3CD; } }
+
+/* Jin logon ko animation se takleef hoti hai (device setting), unke liye sab band */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .steps-static .step { transform: none !important; }
+  .chart .draw { stroke-dasharray: none; }
+}

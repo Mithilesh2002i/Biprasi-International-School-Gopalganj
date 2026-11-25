@@ -1,0 +1,83 @@
+/* Class diary (teacher/admin) + Parent reports */
+.diary-top { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.diary-note { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--soft); color: var(--primary-ink); font-weight: 600; }
+
+/* Photos */
+.photo-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.photo-thumb { position: relative; width: 112px; height: 112px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface-2); padding: 0; cursor: zoom-in; }
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+div.photo-thumb { cursor: default; }
+.photo-x { position: absolute; top: 5px; right: 5px; width: 26px; height: 26px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .65); color: #fff; display: grid; place-items: center; cursor: pointer; }
+.photo-add { width: 112px; height: 112px; border-radius: 12px; border: 2px dashed var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--primary-ink); font-weight: 600; font-size: .85rem; cursor: pointer; text-align: center; }
+.photo-add:hover, .photo-add:focus-within { border-color: var(--primary); background: var(--soft); }
+
+/* Student status buttons */
+.st-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.st-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; min-height: 34px; transition: background .15s, color .15s, border-color .15s; }
+.st-btn:disabled { opacity: .55; cursor: not-allowed; }
+.st-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.st-btn.on.st-ok { background: var(--ok); border-color: var(--ok); color: #fff; }
+.st-btn.on.st-warn { background: #B7791F; border-color: #B7791F; color: #fff; }
+.st-btn.on.st-bad { background: var(--bad); border-color: var(--bad); color: #fff; }
+.st-btn.on.st-neutral { background: #5B6670; border-color: #5B6670; color: #fff; }
+.st-btn.on.st-info { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+
+/* Parent: day navigator */
+.day-nav { display: grid; gap: 12px; }
+.day-chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.daychip { flex: 1 0 74px; display: grid; gap: 2px; justify-items: center; padding: 8px 6px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; font: inherit; }
+.daychip small { color: var(--muted); } .daychip b { font-size: .9rem; }
+.daychip i { width: 9px; height: 9px; border-radius: 50%; background: #8A949C; }
+.daychip.lv-ok i { background: var(--ok); } .daychip.lv-warn i { background: #D49A22; } .daychip.lv-bad i { background: var(--bad); }
+.daychip.on { border-color: var(--primary); background: var(--soft); box-shadow: 0 0 0 2px var(--primary) inset; }
+.daychip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.day-pick { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.day-pick .input { width: auto; }
+
+/* Parent: period card */
+.period-card { display: grid; gap: 10px; }
+.p-head { display: flex; align-items: center; gap: 12px; }
+.p-no { width: 44px; height: 44px; border-radius: 12px; background: var(--primary); color: var(--on-primary); display: grid; place-items: center; font-weight: 700; flex: none; }
+.p-title { flex: 1; min-width: 0; } .p-title h3 { margin: 0; } .p-title small { display: inline-flex; align-items: center; gap: 4px; }
+.p-ex { display: flex; gap: 8px; align-items: flex-start; margin: 0; }
+.p-note { display: flex; gap: 8px; align-items: center; margin: 0; padding: 8px 12px; border-radius: 10px; background: var(--warn-bg); color: var(--warn); font-weight: 600; }
+.period-card .photo-grid { margin-top: 0; }
+
+/* Parent: subject report */
+.subj-card { display: grid; gap: 12px; border-top: 5px solid var(--tone, var(--primary)); }
+.subj-card h3 { margin: 0; }
+.seg { display: flex; gap: 2px; height: 12px; border-radius: 999px; overflow: hidden; background: var(--surface-2); }
+.seg span { display: block; height: 100%; }
+.seg-d { background: var(--ok); } .seg-p { background: #D49A22; } .seg-n { background: var(--bad); }
+.seg-legend { list-style: none; padding: 0; margin: 0; display: flex; gap: 14px; flex-wrap: wrap; font-size: .85rem; }
+.seg-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; }
+.mini-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0; }
+.mini-stats div { background: var(--surface-2); border-radius: 10px; padding: 8px; text-align: center; }
+.mini-stats dt { font-size: .75rem; color: var(--muted); } .mini-stats dd { margin: 0; font-weight: 700; font-size: 1.1rem; }
+.mini-bars { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; height: 90px; align-items: end; }
+.mini-bars > div { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; gap: 4px; }
+.mini-bars span { width: 100%; max-width: 34px; border-radius: 4px 4px 0 0; background: #8A949C; display: block; }
+.mini-bars span.lv-ok { background: var(--ok); } .mini-bars span.lv-warn { background: #D49A22; } .mini-bars span.lv-bad { background: var(--bad); }
+.mini-bars small { font-size: .72rem; color: var(--muted); }
+.missed summary { cursor: pointer; font-weight: 600; } .missed ul { padding-left: 18px; margin: 8px 0 0; display: grid; gap: 6px; }
+
+/* Parent: progress */
+.remark { display: flex; gap: 10px; align-items: center; padding: 12px 16px; border-radius: 12px; background: var(--soft); color: var(--primary-ink); margin: 0 0 16px; }
+.marks-table th .muted { font-weight: 400; font-size: .75rem; } .marks-table .total-row td { background: var(--surface-2); }
+.exam.past { opacity: .75; }
+
+/* Parent home */
+.snap { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.snap-item { display: grid; gap: 4px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.snap-item small { color: var(--muted); }
+.banner-line { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; margin-bottom: 14px; background: var(--warn-bg); color: var(--warn); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 1000px) { .diary-top { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .diary-top { grid-template-columns: 1fr 1fr; }
+  .mini-stats { grid-template-columns: repeat(2, 1fr); }
+  .photo-thumb, .photo-add { width: 96px; height: 96px; }
+  .p-head { flex-wrap: wrap; }
+}
+@media print { .topbar, .btn, .tabs { display: none !important; } .card { box-shadow: none; break-inside: avoid; } }
+@media (prefers-reduced-motion: reduce) { .st-btn { transition: none; } }

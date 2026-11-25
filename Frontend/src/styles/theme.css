@@ -1,0 +1,32 @@
+/* Teen panel, teen rang — school ke logo se liye gaye:
+   student = green, parent = teal, teacher = navy, admin = maroon (control panel alag pehchaan ke liye). 'school' = home page (navy). */
+:root, [data-theme='student'] {
+  --bg: #EFF5F0; --surface: #F8FBF8; --surface-2: #E1EDE4; --ink: #11261C; --muted: #4A6354; --line: #CFE0D4;
+  --primary: #23703F; --primary-ink: #15502D; --on-primary: #F4FBF6; --accent: #E0A93B; --soft: #D6EBDC;
+  --side-bg: #123D26; --side-ink: #DDEFE3; --hero-1: #0F4A2C; --hero-2: #0E2A4D;
+}
+[data-theme='teacher'], [data-theme='school'] {
+  --bg: #ECF0F7; --surface: #F7F9FD; --surface-2: #DFE6F2; --ink: #12213B; --muted: #4C5C78; --line: #CFD8E8;
+  --primary: #1F4A86; --primary-ink: #123361; --on-primary: #F5F8FE; --accent: #E0A93B; --soft: #D9E4F5;
+  --side-bg: #0E2A4D; --side-ink: #DCE6F6; --hero-1: #0B2243; --hero-2: #1F4A86;
+}
+[data-theme='parent'] {
+  --bg: #EDF5F5; --surface: #F7FBFB; --surface-2: #DDEBEB; --ink: #112828; --muted: #4A6666; --line: #CDE0E0;
+  --primary: #0F6F73; --primary-ink: #0A4D50; --on-primary: #F2FBFB; --accent: #E0A93B; --soft: #D2EAEA;
+  --side-bg: #0B3C3F; --side-ink: #D8EEEE; --hero-1: #0A4D50; --hero-2: #0E2A4D;
+}
+[data-theme='admin'] {
+  --bg: #F4EEEE; --surface: #FBF8F8; --surface-2: #EBDFE1; --ink: #2A1418; --muted: #6B4D53; --line: #E3D3D6;
+  --primary: #8A2D3B; --primary-ink: #651E2A; --on-primary: #FFF7F8; --accent: #E0A93B; --soft: #F3DCE0;
+  --side-bg: #2B1418; --side-ink: #F2DEE1; --hero-1: #2B1418; --hero-2: #651E2A;
+}
+:root {
+  --ok: #2B7A57; --ok-bg: #D9EEE2; --warn: #7F5200; --warn-bg: #F8E6C2; --bad: #A03434; --bad-bg: #F4DADA;
+  --radius: 14px; --radius-sm: 9px;
+  --font-body: 'Mukta', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Baloo 2', 'Mukta', system-ui, sans-serif;
+  --shadow: 0 1px 2px rgba(20, 40, 45, .06), 0 6px 18px rgba(20, 40, 45, .05);
+}
+/* Subject colours (soft pastel, dark text) */
+.tone-0 { --tone: #F4E1BD; } .tone-1 { --tone: #CFE2F1; } .tone-2 { --tone: #D3EBDD; }
+.tone-3 { --tone: #DDE9C4; } .tone-4 { --tone: #E0D8F0; } .tone-5 { --tone: #F2D8D6; }
